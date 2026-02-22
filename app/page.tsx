@@ -8,6 +8,10 @@ import { useForm, ValidationError } from '@formspree/react';
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 
+const isProd = process.env.NODE_ENV === 'production';
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+const basePath = isProd && isGitHubPages ? '/website' : '';
+
 export default function Home() {
   const [headerVisible, setHeaderVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
@@ -267,7 +271,7 @@ ${message}
                 <p className="mt-2 text-sm">Duration: Multi-day immersive program</p>
                 <p className="text-sm">Inquire for Pricing & Availability</p>
                 <a
-                  href="/Aatmik-Retreat.pdf"
+                  href={`${basePath}/Aatmik-Retreat.pdf`}
                   download
                   className="mt-4 inline-flex items-center text-sm text-orange-600 hover:text-orange-700"
                 >
@@ -461,7 +465,7 @@ ${message}
                         ref={(el) => {
                           videoRefs.current[index] = el;
                         }}
-                        src={`/testimonial${num}.mp4`}
+                        src={`${basePath}/testimonial${num}.mp4`}
                         className="w-full h-full object-cover"
                         playsInline
                         preload="metadata"
