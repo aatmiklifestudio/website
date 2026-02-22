@@ -4,15 +4,11 @@ import { Inter } from "next/font/google"
 
 const inter = Inter({ subsets: ["latin"] })
 
-const isProd = process.env.NODE_ENV === 'production';
-const isGitHubPages = process.env.GITHUB_PAGES === 'true';
-const basePath = isProd && isGitHubPages ? '/website' : '';
-
 export const metadata = {
   title: "Aatmik Life Studio",
   icons: {
     icon: {
-      url: `${basePath}/icon-tab.jpg`,
+      url: '/icon-tab.jpg',
       sizes: '128x128',
     },
   },

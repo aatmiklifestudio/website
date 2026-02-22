@@ -8,10 +8,6 @@ import { useForm, ValidationError } from '@formspree/react';
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 
-const isProd = process.env.NODE_ENV === 'production';
-const isGitHubPages = process.env.GITHUB_PAGES === 'true';
-const basePath = isProd && isGitHubPages ? '/website' : '';
-
 export default function Home() {
   const [headerVisible, setHeaderVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
@@ -136,7 +132,7 @@ ${message}
         <div className="container mx-auto flex items-center justify-between px-4 py-7">
           <div>
             <Image
-              src={`${basePath}/icon.png`}
+              src="/icon.png"
               alt="icon"
               width={64}
               height={64}
@@ -208,7 +204,7 @@ ${message}
               </div>
               <div className="flex items-center justify-center h-[800px]">
                 <Image
-                  src={`${basePath}/yoga.jpg`}
+                  src="/yoga.jpg"
                   alt="Woman meditating"
                   width={300}
                   height={600}
@@ -226,7 +222,7 @@ ${message}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div>
               <Image
-                src={`${basePath}/IMG_2418.JPEG`}
+                src="/IMG_2418.JPEG"
                 alt="Stacked stones"
                 width={800}
                 height={600}
@@ -271,7 +267,7 @@ ${message}
                 <p className="mt-2 text-sm">Duration: Multi-day immersive program</p>
                 <p className="text-sm">Inquire for Pricing & Availability</p>
                 <a
-                  href={`${basePath}/Aatmik-Retreat.pdf`}
+                  href="/Aatmik-Retreat.pdf"
                   download
                   className="mt-4 inline-flex items-center text-sm text-orange-600 hover:text-orange-700"
                 >
@@ -465,7 +461,7 @@ ${message}
                         ref={(el) => {
                           videoRefs.current[index] = el;
                         }}
-                        src={`${basePath}/testimonial${num}.mp4`}
+                        src={`/testimonial${num}.mp4`}
                         className="w-full h-full object-cover"
                         playsInline
                         preload="metadata"
@@ -538,7 +534,7 @@ ${message}
       <section className="bg-[rgb(240,239,225)]">
         <div className="w-full h-[50vh] md:h-[600px]">
           <Image
-            src={`${basePath}/pexels-yaroslav-shuraev-4938111.jpg`}
+            src="/pexels-yaroslav-shuraev-4938111.jpg"
             alt="Healthy food display"
             width={1920}
             height={1080}
@@ -590,7 +586,7 @@ ${message}
       <section className="py-16 bg-[rgb(240,239,225)] relative">
         <div className="absolute inset-0 z-0">
           <Image
-            src={`${basePath}/pexels-taryn-elliott-7565936.jpg`}
+            src="/pexels-taryn-elliott-7565936.jpg"
             alt="Fruit bowl background"
             fill
             className="object-cover"
